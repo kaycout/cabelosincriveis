@@ -30,26 +30,21 @@ Modelação do banco de dados baseado nos requisidos exigidos acima, definindo u
 Clientes ▪ Cliente_ID (Chave Primária) ▪ Nome ▪ Endereço ▪ Telefone ▪ E-mail ▪ Preferências o Serviços ▪ Serviço_ID (Chave Primária) ▪ Tipo ▪ Descrição ▪ Preço o Agendamentos ▪ Agendamento_ID (Chave Primária) ▪ Cliente_ID (Chave Estrangeira referenciando a tabela Clientes) ▪ Serviço_ID (Chave Estrangeira referenciando a tabela Serviços) ▪ Data ▪ Horário ▪ Cabeleireiro o Estoque ▪ Produto_ID (Chave Primária) ▪ Nome ▪ Quantidade ▪ Data_Entrada ▪ Data_Saída o Funcionários ▪ Funcionário_ID (Chave Primária) ▪ Nome ▪ Função ▪ Horário_Trabalho ▪ Salário
 
 # Modelo Lógico com as normalizações
-
-![normalizacaolivre png](https://github.com/user-attachments/assets/a06aca03-546f-434e-bdf4-29df2feb6169)
+<img src="normalizacaolivre.png" width=1000 height=80>
 
 ## 1 Normalização
 
-![primeiranormalizacao](https://github.com/user-attachments/assets/998eeba5-0112-4379-98f3-b0ea0100e584)
+<img src="primeiranormalizacao.png" width=1000 height=80>
 
 ## 2 Normalização
-![segundanormalizacao](https://github.com/user-attachments/assets/b7c7e60e-2967-4657-9fab-03e5aa24a6e9)
+<img src="segundanormalizacao.png" width=1000 height=80>
 
 ## 3 Normalização
 
-
-
-
 # Modelo Físico
 ### Código escrito em sql
+
 ```sql create database cabelosincriveisdb; use cabelosincriveis;
-create database cabelosincriveis;
-use cabelosincriveis
 
 -- Criar banco de dados para o salão de cabelereiros "Cabelos Incríveis"
 
@@ -57,16 +52,17 @@ create database cabelosincriveisdb;
 use cabelosincriveis;
 
 CREATE TABLE endereco(
-idendereco INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-tipologradouro VARCHAR(20) NOT NULL DEFAULT 'not null',
-logradouro VARCHAR(50) NOT NULL DEFAULT 'not null',
-numero VARCHAR(10) NOT NULL DEFAULT 'not null',
-complemento VARCHAR(20) NOT NULL,
-cep VARCHAR(9) NOT NULL DEFAULT 'not null',
-bairro VARCHAR(40) NOT NULL DEFAULT 'not null',
-cidade VARCHAR(50) NOT NULL DEFAULT 'not null',
-uf CHAR(2) NOT NULL DEFAULT 'not null',
-pais VARCHAR(30) NOT NULL DEFAULT '"Brasil"');
+idendereco INT PRIMARY KEY AUTO_INCREMENT not null,
+tipologradouro VARCHAR(20) not null,
+logradouro VARCHAR(50)  not null,
+numero VARCHAR(10)  not null,
+complemento VARCHAR(20) not null,
+cep VARCHAR(9) not null,
+bairro VARCHAR(40) not null,
+cidade VARCHAR(50) not null,
+uf CHAR(2) not null,
+pais VARCHAR(30) not null 
+);
 
 CREATE TABLE contato(
 idcontato INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -270,4 +266,5 @@ references servico(idservico);
 
 #### Diagrama do relacionamento Casa Oliveira
 
-![modelorelacional cabelosincriveis](https://github.com/user-attachments/assets/f0ee11ec-7cde-4344-97ac-a563ac54997e)
+<img src="modelorelacional.cabelosincriveis.png" width=1000 height=80>
+
